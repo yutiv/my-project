@@ -1,0 +1,70 @@
+.message1 {
+    height: 20px;
+    border-radius: 12px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    background-color: #f1f1f1;
+    width: max-content;
+    align-content: center;
+}
+
+.message2 {
+    margin-left: auto;
+    width: max-content;
+    height: 20px;
+    border-radius: 12px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 8px;
+    background-color: #615EF0;
+    align-content: center;
+}
+
+.avmsg {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+#textField {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+}
+
+
+.hidden {
+    display: hidden;
+}
+
+.msg-ml {
+    margin-left: 48px;
+}
+
+.msg-mr {
+    margin-right: 48px;
+}
+
+#send {
+    color: #615ef0;
+    Width: 18.89px;
+    Height: 18.88px;
+    Top: 2.56px;
+    Left: 2.56px;
+    transform: rotate(320deg);
+}
+
+.messages {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+}
