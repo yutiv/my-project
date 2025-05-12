@@ -5,13 +5,14 @@ const express = require('express');
 
 const app = express();
 var mysql = require('mysql');
+app.use(express.json());
 const { insertUser } = require('../backend/chatFront');
 app.listen(3001, function () {
   console.log('Example app listening on port 3001!');
 });
 
 var pool = mysql.createConnection({
-  connectionLimit: 10,
+  // connectionLimit: 10,
   host: 'localhost',
   user: 'root',
   password: 'root111',
@@ -34,5 +35,20 @@ app.get('/', function (req, res) {
   }
   const query = ("INSERT INTO chat.users (userName, email, password) VALUES (?,?,?)")
   pool.query(query, [reqBody.userName, reqBody.email, reqBody.password]);
+  // console.log(res);
+
   res.send(res);
 });
+
+app.get('/jj', function (req, res) {
+  pool.query = ("SELECT * FROM chat.users")
+  console.log(res);
+  // res.send(res);
+}
+
+  // })
+
+
+  // pool.query(query);
+  // res.send(res);
+);
