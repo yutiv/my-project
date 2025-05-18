@@ -4,9 +4,7 @@ const connection = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: 'root111',
-  database: 'chat'
+  database: 'chat',
 });
 
-
-
-module.exports = connection.promise(); // חובה!
+module.exports = connection.promise();

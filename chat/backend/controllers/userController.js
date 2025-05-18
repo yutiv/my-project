@@ -1,35 +1,19 @@
-const userDAL = require('../dal/userDal');
-const { getAllUsersFromDB } = require('../dal/userDal');
-const gethello = async (req, res) => {
+const { getAllUsersFromDB, createUserInDB } = require('../dal/userDal');
 
-  console.log("hello");
-  // console.log(res.json(),"req");
-  
-  // res.json(req.body);
-// return res.json()
+async function getUsers(req, res) {
+  const users = await getAllUsersFromDB();
+  res.send(users);
 }
-
-  async function getUsers() {
-    // כאן אפשר להוסיף לוגיקה נוספת בעתיד (סינון, מיפוי, לוגים וכו')
-    const users = await getAllUsersFromDB();
-    console.log(users)
-    return users[0];
-  }
-
 
 const createUser = async (req, res) => {
   try {
-    
-    const { name, email, password } = req.body;
-    console.log(req.body,"req.bode");
-    
-    const newUser = await userDAL.createUser(name, email, password);
-    console.log(newUser," new");
-    
+    const { userName, email, password } = req.body;
+    const newUser = await createUserInDB(userName, email, password);
     res.status(201).json(newUser);
-  } catch (error) {
+  }
+  catch (error) {
     res.status(500).json({ message: 'Error creating user' });
   }
 };
 
-module.exports = { getUsers, createUser ,gethello};
+module.exports = { getUsers, createUser };
