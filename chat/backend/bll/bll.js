@@ -1,4 +1,4 @@
-const { getAllUsersFromDB, createUserInDB } = require('../dal/userDal');
+const { getAllUsersFromDB, createUserInDB, isExist } = require('../dal/userDal');
 
 async function getUsers(req, res) {
   const users = await getAllUsersFromDB();
@@ -16,4 +16,9 @@ const createUser = async (req, res) => {
   }
 };
 
-module.exports = { getUsers, createUser };
+async function login(req, res) {
+  const { email, password } = req.body;
+  const users = await isExist(email, password);
+  res.send(users)
+}
+module.exports = { getUsers, createUser, login };

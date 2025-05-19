@@ -11,4 +11,9 @@ async function createUserInDB(userName, email, password) {
   return result;
 };
 
-module.exports = { getAllUsersFromDB, createUserInDB };
+async function isExist(email, password) {
+  const result = await db.query(`SELECT * FROM users WHERE email='${email}' and password='${password}'`)
+  return [result[0]]
+}
+
+module.exports = { getAllUsersFromDB, createUserInDB, isExist };
