@@ -7,8 +7,10 @@ async function getUsers(req, res) {
 
 const createUser = async (req, res) => {
   try {
-    const { userName, email, password } = req.body;
-    const newUser = await createUserInDB(userName, email, password);
+    const name = req.body.valInputName
+    const email = req.body.valInputEmail
+    const password = req.body.valInputPassword
+    const newUser = await createUserInDB(name, email, password);
     res.status(201).json(newUser);
   }
   catch (error) {
@@ -17,7 +19,8 @@ const createUser = async (req, res) => {
 };
 
 async function login(req, res) {
-  const { email, password } = req.body;
+  const email=req.body.valInputEmail
+  const password=req.body.valInputPassword
   const users = await isExist(email, password);
   res.send(users)
 }
