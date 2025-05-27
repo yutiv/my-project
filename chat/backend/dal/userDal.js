@@ -6,8 +6,7 @@ async function getAllUsersFromDB() {
 }
 
 async function createUserInDB(name, email, password) {
-  const result = await db.query(('INSERT INTO users (userName,email, password) VALUES (?, ?,?)'),
-    [name, email, password]);
+  const result = await db.query(`INSERT INTO users (userName,email, password) VALUES ('${name}','${email}','${password}')`);  
   return result;
 };
 
