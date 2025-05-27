@@ -1,6 +1,6 @@
 import "./index.css"
 import React from "react";
-import { ChatBubble, Home } from "@mui/icons-material";
+import { AppRegistration, ChatBubble, Home, Login } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { Box, BottomNavigation, BottomNavigationAction, ToggleButtonGroup } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -24,8 +24,10 @@ export default function SimpleBottomNavigation() {
             </BottomNavigation>
             <Box dir={direction} >
                 <ToggleButtonGroup orientation={match ? 'vertical' : 'horizontal'}>
-                    <BottomNavigationAction onClick={() => navigate('/home')} icon={<Home />} label="home" />
-                    <BottomNavigationAction onClick={() => navigate('/chat')} icon={<ChatBubble />} label="chatBubble" />
+                    <BottomNavigationAction onClick={() => navigate('/home')} icon={<Home />}showLabel label="home" />
+                    <BottomNavigationAction onClick={() => navigate('/chat')} icon={<ChatBubble />}showLabel label="chatBubble" />
+                    <BottomNavigationAction onClick={() => navigate('/login')} icon={<Login />}showLabel label="login" />
+                    <BottomNavigationAction onClick={() => navigate('/registration')} icon={<AppRegistration />}showLabel label="registration" />
                 </ToggleButtonGroup>
             </Box>
         </div>

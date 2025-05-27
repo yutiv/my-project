@@ -2,10 +2,12 @@ const express = require('express');
 const userRoutes = require('../backend/routes/userRouter')
 const app = express();
 
+const cors = require('cors');
 app.use(express.json());
+app.use(cors())
 
 // Routes
-app.use('/api/users', userRoutes);
+app.use('/', userRoutes);
 
 // Default route
 app.get('/', (req, res) => {

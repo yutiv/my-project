@@ -5,14 +5,15 @@ async function getAllUsersFromDB() {
   return rows;
 }
 
-async function createUserInDB(userName, email, password) {
+async function createUserInDB(name, email, password) {
   const result = await db.query(('INSERT INTO users (userName,email, password) VALUES (?, ?,?)'),
-    [userName, email, password]);
+    [name, email, password]);
   return result;
 };
 
 async function isExist(email, password) {
   const result = await db.query(`SELECT * FROM users WHERE email='${email}' and password='${password}'`)
+  console.log(result[0]," result[0]");
   return [result[0]]
 }
 
