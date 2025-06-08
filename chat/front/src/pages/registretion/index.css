@@ -1,6 +1,17 @@
-#form{
-    margin-top: 50px;
+.textSignUp{
+    margin-left: 450px;
 }
-#send{
+.text {
+    opacity: 49%;
+    margin-top: 25px;
+    margin-left: 200px;
+}
+.input {
+    width: 260px;
+    height: 53px;
+    top: 0px;
+    left: 200px;
+}
+.send{
     border-radius: 80px;
 }

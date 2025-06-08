@@ -17,10 +17,10 @@ export const getChatData = async (url, query) => {
 }
 
 export const postChatData = async (url, options) => {
-    try {        
+    try {
         const response = await chat.post(url, options)
         const { status, statusText, data } = response
-        let res = { status, statusText, data }        
+        let res = { status, statusText, data }
         return (res)
     }
     catch (error) {

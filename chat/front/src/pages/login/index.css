@@ -1,6 +1,26 @@
-#form{
-    margin-top: 50px;
+.textSignIn {
+    margin-left: 450px;
 }
-#send{
-    border-radius: 80px;
+
+.send {
+    width: 263px;
+    top: 50px;
+    left: 200px;
+}
+
+.text {
+    opacity: 49%;
+    margin-top: 30px;
+    margin-left: 200px;
+}
+
+.textFieldEmail {
+    width: 265px;
+    height: 50px;
+    left: 200px;
+    padding: 30px;
+}
+
+.icon {
+    color: #4346DB;
 }
