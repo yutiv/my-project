@@ -30,31 +30,38 @@ const HelloRegistration = () => {
         postChatData('/', { valInputName, valInputEmail, valInputPassword })
     }
     return (<>
-        <h1 className="textSignUp">Sign Up</h1>
-        <FormControl>
-            <h4 className="text">Name</h4>
-            <TextField className="input" onChange={handleChangeName} value={valInputName} />
-            <h4 className="text">Email</h4>
-            <TextField className="input" onChange={handleChangeEmail} value={valInputEmail} />
-            <h4 className="text">Password</h4>
-            <OutlinedInput
-                className="input"
-                type={showPassword ? 'text' : 'password'}
-                value={valInputPassword}
-                onChange={handleChangePassword}
-                endAdornment={
-                    <IconButton
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        onMouseUp={handleMouseUpPassword}
-                        edge="end"
-                    >
-                        {showPassword ? <VisibilityOff className="icon" /> : <Visibility className="icon" />}
-                    </IconButton>
-                }
-            />
-            <Button className="send" variant="contained" onClick={() => send()}>sign up</Button>
-        </FormControl>
+        <div className="All">
+            <h1 className="textSignUp">Sign Up</h1>
+            <FormControl>
+                <h4 className="text">Name</h4>
+                < OutlinedInput className="input">
+                    <TextField onChange={handleChangeName} value={valInputName} />
+                </OutlinedInput>
+                <h4 className="text">Email</h4>
+                <OutlinedInput className="input">
+                    <TextField onChange={handleChangeEmail} value={valInputEmail} />
+                </OutlinedInput>
+                <h4 className="text">Password</h4>
+                <OutlinedInput
+                    className="input"
+                    type={showPassword ? 'text' : 'password'}
+                    value={valInputPassword}
+                    onChange={handleChangePassword}
+                    endAdornment={
+                        <IconButton
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                            onMouseUp={handleMouseUpPassword}
+                            edge="end"
+                        >
+                            {showPassword ? <VisibilityOff className="icon" /> : <Visibility className="icon" />}
+                        </IconButton>
+                    }
+                />
+                <Button className="send" variant="contained" onClick={() => send()}>sign up</Button>
+            </FormControl>
+            <h4 className="link">I'm a new user.  <a href="/login">Sign In</a></h4>
+        </div>
     </>
     );
 }

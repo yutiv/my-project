@@ -1,11 +1,9 @@
-.textSignIn {
-    margin-left: 450px;
+.All {
+    margin-left: 25%;
 }
 
-.send {
-    width: 263px;
-    top: 50px;
-    left: 200px;
+.textSignIn {
+    margin-left: 25%;
 }
 
 .text {
@@ -14,13 +12,17 @@
     margin-left: 200px;
 }
 
-.textFieldEmail {
-    width: 265px;
-    height: 50px;
-    left: 200px;
-    padding: 30px;
-}
-
 .icon {
     color: #4346DB;
+}
+
+.send {
+    width: 263px;
+    top: 50px;
+    left: 200px;
+}
+
+.link {
+    margin-top: 80px;
+    margin-left: 200px;
 }
