@@ -1,5 +1,5 @@
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { BottomNavigation, BottomNavigationAction, Button, FormControl, IconButton, OutlinedInput, TextField } from "@mui/material";
+import { Button, FormControl, IconButton, OutlinedInput, TextField } from "@mui/material";
 import React from "react";
 import './index.css'
 import { postChatData } from "../../service/axios";
@@ -8,18 +8,11 @@ const HelloLogin = () => {
     const [valInputPassword, setValInputPassword] = React.useState('');
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
-
     const handleChangeEmail = (event) => {
         setValInputEmail(event.target.value);
     };
     const handleChangePassword = (event) => {
         setValInputPassword(event.target.value);
-    };
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
-    const handleMouseUpPassword = (event) => {
-        event.preventDefault();
     };
     const send = () => {
         postChatData('/login', { valInputEmail, valInputPassword })
@@ -42,8 +35,6 @@ const HelloLogin = () => {
                     endAdornment={
                         <IconButton
                             onClick={handleClickShowPassword}
-                            onMouseDown={handleMouseDownPassword}
-                            onMouseUp={handleMouseUpPassword}
                             edge="end"
                         >
                             {showPassword ? <VisibilityOff className="icon" /> : <Visibility className="icon" />}

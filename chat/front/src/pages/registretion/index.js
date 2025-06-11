@@ -19,13 +19,6 @@ const HelloRegistration = () => {
         setValInputPassword(event.target.value);
     };
     const handleClickShowPassword = () => setShowPassword((show) => !show);
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
-
-    const handleMouseUpPassword = (event) => {
-        event.preventDefault();
-    };
     const send = () => {
         postChatData('/', { valInputName, valInputEmail, valInputPassword })
     }
@@ -50,8 +43,6 @@ const HelloRegistration = () => {
                     endAdornment={
                         <IconButton
                             onClick={handleClickShowPassword}
-                            onMouseDown={handleMouseDownPassword}
-                            onMouseUp={handleMouseUpPassword}
                             edge="end"
                         >
                             {showPassword ? <VisibilityOff className="icon" /> : <Visibility className="icon" />}
