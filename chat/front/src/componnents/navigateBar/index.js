@@ -25,9 +25,9 @@ export default function SimpleBottomNavigation() {
             <Box dir={direction} >
                 <ToggleButtonGroup orientation={match ? 'vertical' : 'horizontal'}>
                     <BottomNavigationAction onClick={() => navigate('/home')} icon={<Home />}showLabel label="home" />
-                    <BottomNavigationAction onClick={() => navigate('/chat')} icon={<ChatBubble />}showLabel label="chatBubble" />
-                    <BottomNavigationAction onClick={() => navigate('/login')} icon={<Login />}showLabel label="login" />
-                    <BottomNavigationAction onClick={() => navigate('/registration')} icon={<AppRegistration />}showLabel label="registration" />
+                    {/* <BottomNavigationAction onClick={() => navigate('/chat')} icon={<ChatBubble />}showLabel label="chatBubble" />
+                    <BottomNavigationAction onClick={() => navigate('/login')} icon={<Login />}showLabel label="sign in" />
+                    <BottomNavigationAction onClick={() => navigate('/registration')} icon={<AppRegistration />}showLabel label="sign up" /> */}
                 </ToggleButtonGroup>
             </Box>
         </div>

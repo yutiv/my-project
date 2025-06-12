@@ -12,7 +12,6 @@ async function createUserInDB(name, email, password) {
 
 async function isExist(email, password) {
   const result = await db.query(`SELECT * FROM users WHERE email='${email}' and password='${password}'`)
-  console.log(result[0]," result[0]");
   return [result[0]]
 }
 

@@ -1,13 +1,14 @@
 import "./index.css"
-import { Send } from "@mui/icons-material";
-import { FormControl, IconButton, TextField } from "@mui/material";
+import { Button, FormControl, IconButton, OutlinedInput, TextField } from "@mui/material";
 import React from "react";
 import { postChatData } from "../../service/axios";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const HelloRegistration = () => {
-const [valInputName, setValInputName] = React.useState('');
-const [valInputEmail, setValInputEmail] = React.useState('');
-const [valInputPassword, setValInputPassword] = React.useState('');
+    const [valInputName, setValInputName] = React.useState('');
+    const [valInputEmail, setValInputEmail] = React.useState('');
+    const [valInputPassword, setValInputPassword] = React.useState('');
+    const [showPassword, setShowPassword] = React.useState(false);
     const handleChangeName = (event) => {
         setValInputName(event.target.value);
     };
@@ -17,17 +18,40 @@ const [valInputPassword, setValInputPassword] = React.useState('');
     const handleChangePassword = (event) => {
         setValInputPassword(event.target.value);
     };
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
     const send = () => {
-        postChatData('/',{valInputName,valInputEmail,valInputPassword})
+        postChatData('/', { valInputName, valInputEmail, valInputPassword })
     }
     return (<>
-        <div>
-            <FormControl id="form">
-                <TextField label="name"  onChange={handleChangeName} value={valInputName}/>
-                <TextField label="email" onChange={handleChangeEmail} value={valInputEmail}/>
-                <TextField label="password"  onChange={handleChangePassword} value={valInputPassword}/>
-                <IconButton id="send" onClick={() => send()}><Send /></IconButton>
+        <div className="All">
+            <h1 className="textSignUp">Sign Up</h1>
+            <FormControl>
+                <h4 className="text">Name</h4>
+                < OutlinedInput className="input">
+                    <TextField onChange={handleChangeName} value={valInputName} />
+                </OutlinedInput>
+                <h4 className="text">Email</h4>
+                <OutlinedInput className="input">
+                    <TextField onChange={handleChangeEmail} value={valInputEmail} />
+                </OutlinedInput>
+                <h4 className="text">Password</h4>
+                <OutlinedInput
+                    className="input"
+                    type={showPassword ? 'text' : 'password'}
+                    value={valInputPassword}
+                    onChange={handleChangePassword}
+                    endAdornment={
+                        <IconButton
+                            onClick={handleClickShowPassword}
+                            edge="end"
+                        >
+                            {showPassword ? <VisibilityOff className="icon" /> : <Visibility className="icon" />}
+                        </IconButton>
+                    }
+                />
+                <Button className="send" variant="contained" onClick={() => send()}>sign up</Button>
             </FormControl>
+            <h4 className="link">I'm a new user.  <a href="/login">Sign In</a></h4>
         </div>
     </>
     );

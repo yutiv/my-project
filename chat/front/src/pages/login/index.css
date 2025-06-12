@@ -1,6 +1,20 @@
-#form{
-    margin-top: 50px;
+.text {
+    opacity: 49%;
+    margin-top: 30px;
+    margin-left: 200px;
 }
-#send{
-    border-radius: 80px;
+
+.icon {
+    color: #4346DB;
+}
+
+.send {
+    width: 263px;
+    top: 50px;
+    left: 200px;
+}
+
+.link {
+    margin-top: 80px;
+    margin-left: 200px;
 }
