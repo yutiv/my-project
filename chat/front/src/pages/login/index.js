@@ -1,5 +1,5 @@
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { Button, FormControl, IconButton, OutlinedInput, TextField } from "@mui/material";
+import { Button, FormControl, IconButton, Input, OutlinedInput, TextField } from "@mui/material";
 import React from "react";
 import './index.css'
 import { postChatData } from "../../service/axios";
@@ -9,12 +9,19 @@ const HelloLogin = () => {
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleChangeEmail = (event) => {
+        console.log(valInputEmail," jjj");
+        console.log(event.target.value);
+        
         setValInputEmail(event.target.value);
     };
     const handleChangePassword = (event) => {
+        console.log("aaa");
+        
         setValInputPassword(event.target.value);
     };
     const send = () => {
+        console.log(valInputEmail," mmm");
+        
         postChatData('/login', { valInputEmail, valInputPassword })
     }
 
@@ -23,8 +30,9 @@ const HelloLogin = () => {
             <h1 className="textSignIn">Sign In</h1>
             <FormControl>
                 <h4 className="text">Email Address</h4>
-                <OutlinedInput className="input">
-                    <TextField onChange={handleChangeEmail} value={valInputEmail} />
+                <OutlinedInput className="input" onChange={handleChangeEmail}>
+                    <TextField value={valInputEmail} />
+                    {/* <TextField onChange={handleChangeEmail} value={valInputEmail} /> */}
                 </OutlinedInput>
                 <h4 className="text">Password</h4>
                 <OutlinedInput

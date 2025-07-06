@@ -3,7 +3,7 @@ const { getUsers, createUser, login } = require('../bll/bll');
 const router = express.Router();
 
 router.get('/', getUsers);
-router.post('/', createUser);
+router.post('/registration', createUser);
 router.post('/login', login);
-
+// router.get('/', auth, ctrlUser.slash);
 module.exports = router;

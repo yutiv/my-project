@@ -20,19 +20,19 @@ const HelloRegistration = () => {
     };
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const send = () => {
-        postChatData('/', { valInputName, valInputEmail, valInputPassword })
+        postChatData('/registration', { valInputName, valInputEmail, valInputPassword })
     }
     return (<>
         <div className="All">
             <h1 className="textSignUp">Sign Up</h1>
             <FormControl>
                 <h4 className="text">Name</h4>
-                < OutlinedInput className="input">
-                    <TextField onChange={handleChangeName} value={valInputName} />
+                < OutlinedInput className="input" onChange={handleChangeName}>
+                    <TextField value={valInputName} />
                 </OutlinedInput>
                 <h4 className="text">Email</h4>
-                <OutlinedInput className="input">
-                    <TextField onChange={handleChangeEmail} value={valInputEmail} />
+                <OutlinedInput className="input" onChange={handleChangeEmail}>
+                    <TextField value={valInputEmail} />
                 </OutlinedInput>
                 <h4 className="text">Password</h4>
                 <OutlinedInput

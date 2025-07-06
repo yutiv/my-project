@@ -17,7 +17,9 @@ export const getChatData = async (url, query) => {
 }
 
 export const postChatData = async (url, options) => {
-    try {
+    try {        
+        console.log(options," op");
+        
         const response = await chat.post(url, options)
         const { status, statusText, data } = response
         let res = { status, statusText, data }
