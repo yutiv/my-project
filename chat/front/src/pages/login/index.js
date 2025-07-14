@@ -9,18 +9,18 @@ const HelloLogin = () => {
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleChangeEmail = (event) => {
-        console.log(valInputEmail," jjj");
-        console.log(event.target.value);
+        // console.log(valInputEmail," jjj");
+        // console.log(event.target.value);
         
         setValInputEmail(event.target.value);
     };
     const handleChangePassword = (event) => {
-        console.log("aaa");
+        // console.log("aaa");
         
         setValInputPassword(event.target.value);
     };
     const send = () => {
-        console.log(valInputEmail," mmm");
+        // console.log(valInputEmail," mmm");
         
         postChatData('/login', { valInputEmail, valInputPassword })
     }
